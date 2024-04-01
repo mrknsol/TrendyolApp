@@ -1,0 +1,140 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\3539257.jpg" />
+    <None Remove="Images\book.jpg" />
+    <None Remove="Images\Card Payment.png" />
+    <None Remove="Images\close.png" />
+    <None Remove="Images\eyeglasses.jpg" />
+    <None Remove="Images\headphone.jpg" />
+    <None Remove="Images\Home.png" />
+    <None Remove="Images\img.jpg" />
+    <None Remove="Images\korzina.jpg" />
+    <None Remove="Images\Logout.png" />
+    <None Remove="Images\Male User.png" />
+    <None Remove="Images\Menu.png" />
+    <None Remove="Images\metaquest.jpg" />
+    <None Remove="Images\minimize.png" />
+    <None Remove="Images\noutbook.jpg" />
+    <None Remove="Images\Payment History.png" />
+    <None Remove="Images\phone.jpg" />
+    <None Remove="Images\profile.jpg" />
+    <None Remove="Images\Purchase Order.png" />
+    <None Remove="Images\ty-web.png" />
+    <None Remove="Images\Undraw-02.png" />
+    <None Remove="Images\Undraw-03.png" />
+    <None Remove="Images\Undraw-04.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\3539257.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\book.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Card Payment.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\close.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\eyeglasses.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\headphone.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Home.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\img.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\korzina.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Logout.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Male User.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Menu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\metaquest.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\minimize.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\noutbook.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Payment History.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\phone.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\profile.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Purchase Order.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ty-web.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Undraw-02.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Undraw-03.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Undraw-04.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Prism.Core" Version="8.1.97" />
+	<PackageReference Include="SimpleInjector" Version="5.4.1" />
+	
+	<PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+	<PackageReference Include="MvvmLightLibsStd10" Version="5.4.1.1" />
+	<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	<PackageReference Include="Microsoft.EntityframeworkCore" Version="8.0.1" />
+	<PackageReference Include="Microsoft.EntityframeworkCore.Design" Version="8.0.1">
+	 <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	 <PrivateAssets>all</PrivateAssets>
+	</PackageReference>
+	<PackageReference Include="Microsoft.EntityframeworkCore.SqlServer" Version="8.0.1" />
+	<PackageReference Include="Microsoft.EntityframeworkCore.Tools" Version="8.0.1">
+	 <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	 <PrivateAssets>all</PrivateAssets>
+	</PackageReference>
+	<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+	<PackageReference Include="System.Drawing.Common" Version="8.0.2" />
+	  
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

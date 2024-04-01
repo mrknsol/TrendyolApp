@@ -1,0 +1,139 @@
+﻿<UserControl x:Class="TrendyolApp.Views.EmailVerification"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:TrendyolApp" 
+        xmlns:viewmodels="clr-namespace:TrendyolApp.ViewModels" 
+        d:DataContext="{d:DesignInstance Type=viewmodels:EmailVerificationViewModel}" 
+        mc:Ignorable="d" Height="700" Width="950"
+             Background="#6ccbc3">
+    <Grid>
+        <!--<Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0"
+               Grid.Column="1"
+               Content="Please Verificate Yout Email"
+               FontSize="25"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               />
+        <TextBox x:Name="emailTextBox"
+                 Grid.Row="1"
+                 Text="{Binding CurrentText}"
+                 Grid.Column="1"
+                 Height="50"
+                 Width="300"
+                 HorizontalAlignment="Left"/>
+        <Label Grid.Row="1"
+               Content="Email:"
+               FontSize="25"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"/>
+
+        <Label Grid.Row="3"
+               Content="Enter Code:"
+               FontSize="25"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Center"/>
+        <TextBox x:Name="enteredCodeTxtBox"
+                 Text="{Binding EnteredCode}"
+                 Grid.Row="3"
+                 Grid.Column="1"
+                 Height="50"
+                 Width="300"
+                 HorizontalAlignment="Left"/>
+
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                Width="50"
+                Height="30"
+                Content="✔"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center" 
+                Command="{Binding SendVerificationCode_Button}"/>
+        <Button Name="BackBtn"
+                Command="{Binding Back_Button}"
+                Width="50"
+                HorizontalAlignment="Left"
+                Content="←"/>
+        <Button x:Name="NextBtn"
+                Grid.Row="3"
+                Grid.Column="1"
+                Command="{Binding VerifyCode_Button}"
+                Width="50"
+                HorizontalAlignment="Right"
+                Content="Go"/>-->
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="450"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" CornerRadius="10" BorderBrush="Gray" BorderThickness="1">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#FFFF" Offset="0"/>
+                        <GradientStop Color="#6ccbc3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+
+                    <TextBlock Text="Forgot Password?" Grid.Row="1" FontSize="25" Foreground="#f38047" FontWeight="Bold" Margin="25,29,-25,-29"/>
+                    <TextBlock Text="Let's Restore" FontSize="35" Foreground="#f38047" FontWeight="Bold" Margin="25,54,-25,-54"/>
+                    <Border CornerRadius="10" BorderBrush="Gray" BorderThickness="1" Width="350" Height="35" Background="White">
+                        <TextBox Grid.Row="1" Height="35" Text="{Binding CurrentText}" Background="Transparent" md:HintAssist.Hint="Enter Email" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="9,-1,9,-1"/>
+                    </Border>
+                    <Border CornerRadius="10" BorderBrush="Gray" BorderThickness="1" Width="33" Height="30" HorizontalAlignment="Left" Background="#f38047" Margin="405,194,0,194">
+                        <Button VerticalAlignment="Center" Width="51" Height="30" HorizontalAlignment="Center" Background="Transparent" Content="✔" FontSize="15" Command="{Binding SendVerificationCode_Button}" RenderTransformOrigin="0.242,0.5"/>
+                    </Border>
+
+                    <Border CornerRadius="10" BorderBrush="Gray" BorderThickness="1" Width="350" Height="35" Background="White" Margin="50,180,50,54">
+                        <TextBox Grid.Row="2" Height="35" Text="{Binding EnteredCode}" Background="Transparent" md:HintAssist.Hint="Enter Code:" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="9,-1,9,-1"/>
+                    </Border>
+
+
+                    <Border CornerRadius="10" BorderBrush="Gray" BorderThickness="1" Width="150" Height="60" Background="#f38047" Margin="150,279,150,-54" >
+                        <Button Content="Verify!" FontSize="25" Height="70" Foreground="White" FontWeight="Bold" Background="Transparent" Style="{StaticResource ResourceKey=MaterialDesignFlatSecondaryDarkButton}" Command="{Binding VerifyCode_Button}" Margin="0,-1,0,-1"/>
+                    </Border>
+
+                </Grid>
+            </Border>
+
+
+        </Grid>
+
+        <Image Grid.Column="0" Source="/Images/Undraw-02.png" Width="500" Height="700" Margin="0 0 0 40"/>
+
+        <Border CornerRadius="10" Width="150" Height="110" BorderBrush="Gray" BorderThickness="1" Background="#f38047" Margin="-46,-30,396,620">
+            <Button FontSize="25" Width="150" Height="75" Foreground="White" FontWeight="Bold" Background="Transparent" Style="{StaticResource ResourceKey=MaterialDesignFlatSecondaryDarkButton}" Command="{Binding Back_Button}" Margin="27,29,-1,16">
+                <md:PackIcon Kind="ArrowBackCircle" Width="50" Height="60" HorizontalAlignment="Center"/>
+            </Button>
+        </Border>
+
+    </Grid>
+</UserControl>
+

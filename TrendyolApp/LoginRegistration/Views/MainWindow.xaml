@@ -1,0 +1,49 @@
+﻿<Window x:Class="TrendyolApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:TrendyolApp.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        MouseDown="Window_MouseDown"
+        Height="700" Width="950"
+        ResizeMode="CanMinimize"
+        WindowStyle="None">
+
+
+
+
+    <Grid>
+        <ContentControl Grid.Row="0" Grid.RowSpan="4" Grid.Column="2" Content="{Binding CurrentView, UpdateSourceTrigger=PropertyChanged}" />
+        <Button
+            Name="Quit"
+            Click="Quit_Click"
+        Foreground="Gray"
+        Style="{StaticResource MaterialDesignFlatLightBgButton}"
+     HorizontalAlignment="Right"
+            Margin="0 0 0 0"
+            BorderBrush="Transparent"
+            Background="Transparent"
+            md:ButtonAssist.CornerRadius="10"
+     VerticalAlignment="Top" Height="28" Width="52">
+            <md:PackIcon
+        Kind="Close" Height="25" Width="34" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+
+        <Button
+            Name="Minimize"
+            Foreground="Gray"
+            Style="{StaticResource MaterialDesignFlatLightBgButton}"
+            HorizontalAlignment="Right"
+            Background="Transparent"
+            BorderBrush="Transparent"
+            Margin="0 0 30 0"
+       md:ButtonAssist.CornerRadius="10"
+VerticalAlignment="Top" Height="28" Width="47" Click="Minimize_Click">
+            <md:PackIcon
+   Kind="Minimize" Height="25" Width="34" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Button>
+    </Grid>
+</Window>

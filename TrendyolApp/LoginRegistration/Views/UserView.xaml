@@ -1,0 +1,135 @@
+﻿<UserControl x:Class="TrendyolApp.Views.UserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:sv="clr-namespace:TrendyolApp.Services.Classes"
+             xmlns:local="clr-namespace:TrendyolApp.Views" xmlns:viewmodels="clr-namespace:TrendyolApp.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:UserViewModel}"
+             mc:Ignorable="d" 
+             Background="White"
+             d:DesignHeight="700" d:DesignWidth="950">
+    <UserControl.Resources>
+        <sv:ContextMenuBinding x:Key="ContextMenu" Data="{Binding}"></sv:ContextMenuBinding>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="670"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Image Source="/Images/ty-web.png"/>
+
+            <Button Grid.Row="1" Width="300" Height="60" Background="Transparent" Foreground="#afb2bc" Style="{StaticResource ResourceKey=MaterialDesignFlatSecondaryDarkButton}" Content="All" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Command="{Binding ShowGoodsByType}" CommandParameter="All"/>
+            <Button Grid.Row="2" Width="300" Height="60" Background="Transparent" Foreground="#afb2bc" Style="{StaticResource ResourceKey=MaterialDesignFlatSecondaryDarkButton}" Content="Smartphones and Accessories" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Command="{Binding ShowGoodsByType}" CommandParameter="Smartphones and Accessories"/>
+            <Button Grid.Row="3" Width="300" Height="60" Background="Transparent" Foreground="#afb2bc" Style="{StaticResource ResourceKey=MaterialDesignFlatSecondaryDarkButton}" Content="Smart Gadjets" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Command="{Binding ShowGoodsByType}" CommandParameter="Smart Gadjets"/>
+            <Button Grid.Row="4" Width="300" Height="60" Background="Transparent" Foreground="#afb2bc" Style="{StaticResource ResourceKey=MaterialDesignFlatSecondaryDarkButton}" Content="Laptops, PC, Tablets" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Command="{Binding ShowGoodsByType}" CommandParameter="Laptops, PC, Tablets"/>
+            <Button Grid.Row="5" Width="300" Height="60" Background="Transparent" Foreground="#afb2bc" Style="{StaticResource ResourceKey=MaterialDesignFlatSecondaryDarkButton}" Content="Gaming Devices" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Command="{Binding ShowGoodsByType}" CommandParameter="Gaming Devices"/>
+            <Button Grid.Row="6" Width="300" Height="60" Background="Transparent" Foreground="#afb2bc" Style="{StaticResource ResourceKey=MaterialDesignFlatSecondaryDarkButton}" Content="TV, Audio, Photo" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Command="{Binding ShowGoodsByType}" CommandParameter="TV, Audio, Photo"/>
+            <Button Grid.Row="7" Width="300" Height="60" Background="Transparent" Foreground="#afb2bc" Style="{StaticResource ResourceKey=MaterialDesignFlatSecondaryDarkButton}" Content="Kitchen Appliances" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Command="{Binding ShowGoodsByType}" CommandParameter="Kitchen Appliances"/>
+            <Button Grid.Row="8" Width="300" Height="60" Background="Transparent" Foreground="#afb2bc" Style="{StaticResource ResourceKey=MaterialDesignFlatSecondaryDarkButton}" Content="Home Appliances" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Command="{Binding ShowGoodsByType}" CommandParameter="Home Appliances"/>
+            <Button Grid.Row="9" Width="300" Height="60" Background="Transparent" Foreground="#afb2bc" Style="{StaticResource ResourceKey=MaterialDesignFlatSecondaryDarkButton}" Content="Automobile Products" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Command="{Binding ShowGoodsByType}" CommandParameter="Automobile Products"/>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+
+            <TextBox Grid.Row="1" Width="350" Height="40" md:HintAssist.Hint="Search" Background="LightGray" FontSize="20" Text="{Binding SearchText}" Margin="0,5,320,5"/>
+            <Button Grid.Row="1" Width="57" Height="40" Content="🔍" Command="{Binding Search}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="350,0,0,0" Background="#0ba38b" BorderBrush="Transparent"/>
+            <Button Grid.Row="1" Width="57" Height="40" Content="×" FontSize="25" Command="{Binding ClearText}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="288,0,0,0" Background="Transparent" BorderBrush="Transparent"/>
+            <TextBlock Grid.Row="1" Width="57" Foreground="#0ba38b" Height="40" Text="{Binding CurrentUser.Balance}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="495,0,0,0" TextAlignment="Center" FontSize="20"/>
+            <Button Grid.Row="1" HorizontalAlignment="Right" Background="#0ba38b" BorderBrush="Transparent" VerticalAlignment="Center" Content="Buy" FontSize="20" Command="{Binding Buy_Button}" Height="40"/>
+            <Button Grid.Row="1" Width="48" Height="40" Background="#0ba38b" BorderBrush="Transparent" Content="♡" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="557,0,0,0" Command="{Binding LikedProductView}"/>
+            <Button Grid.Row="1" Width="78" Content="Profile" Background="#0ba38b" BorderBrush="Transparent" Height="40" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="412,0,0,0" Style="{StaticResource menuBar}">
+                <Button.ContextMenu>
+                    <ContextMenu x:Name="ProfileContextMenu">
+                        <MenuItem Header="Orders" Command="{Binding Source={StaticResource ContextMenu}, Path=Data.OrdersView}"/>
+                        <MenuItem Header="Profile" Command="{Binding Source={StaticResource ContextMenu}, Path=Data.UserInfoView_Button}"/>
+                        <MenuItem Header="Balance" Command="{Binding Source={StaticResource ContextMenu}, Path=Data.IncreaseBalanceView_Button}"/>
+                        <MenuItem Header="Sign out" Foreground="Red" Command="{Binding Source={StaticResource ContextMenu}, Path=Data.SignOut_Button}"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+
+
+            <ListBox Grid.Row="2" ItemsSource="{Binding Goods}" SelectedItem="{Binding SelectedProduct}" 
+         HorizontalContentAlignment="Stretch">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Padding" Value="5"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Border BorderBrush="Black" BorderThickness="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                        <Image Width="150" Height="150" Source="{Binding ImageData}" Stretch="UniformToFill"/>
+                                        <StackPanel Margin="5">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontWeight="Bold" Text="Name: "/>
+                                                <TextBlock Text="{Binding Name}"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontWeight="Bold" Text="Description: "/>
+                                                <TextBlock Text="{Binding Description}"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontWeight="Bold" Text="Product Type: "/>
+                                                <TextBlock Text="{Binding ProductType}"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock FontWeight="Bold" Text="Price: "/>
+                                                <TextBlock Text="{Binding Price}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <!--<CheckBox Grid.Row="0" HorizontalAlignment="Right" Background="#0ba38b" BorderBrush="Transparent" VerticalAlignment="Top" 
+                                  IsChecked="{Binding IsFavorite}"
+                                  Command="{Binding DataContext.ToggleFavoriteCommand, RelativeSource={RelativeSource AncestorType=ListBox}}"/>-->
+                                    <Button Grid.Row="0" HorizontalAlignment="Right" Content="-" Background="#0ba38b" BorderBrush="Transparent" VerticalAlignment="Top" Command="{Binding DataContext.AddOrRemoveProduct, RelativeSource={RelativeSource AncestorType=ListBox}}" CommandParameter="Minus"/>
+                                    <Button Grid.Row="0" HorizontalAlignment="Right" Content="+" Background="#0ba38b" BorderBrush="Transparent" VerticalAlignment="Top" Command="{Binding DataContext.AddOrRemoveProduct, RelativeSource={RelativeSource AncestorType=ListBox}}" Margin="0 0 50 0" CommandParameter="Plus"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+
+
+
+        </Grid>
+
+    </Grid>
+</UserControl>
